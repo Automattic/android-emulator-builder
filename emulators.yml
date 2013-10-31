@@ -1,0 +1,161 @@
+---
+- name: Nexus.7.Gen.2.Jellybean.4.3
+  target: android-18
+  abi: armeabi-v7a
+  skin: 1920x1200
+  config: 
+    hw.lcd.density: 323
+
+- name: Nexus.7.Gen.1.Jellybean.4.3
+  target: android-18
+  abi: armeabi-v7a
+  skin: 1280x800
+  config: 
+    hw.lcd.density: 216
+
+- name: Nexus.7.Gen.1.ICS.4.0.3
+  target: android-15
+  abi: armeabi-v7a
+  skin: 1280x800
+  config: 
+    hw.lcd.density: 216
+
+- name: Nexus.4.Jellybean.4.3
+  target: android-18
+  abi: armeabi-v7a
+  skin: 768x1280
+  config:
+    hw.lcd.density: 320
+
+- name: Nexus.4.ICS.4.0.3
+  target: android-15
+  abi: armeabi-v7a
+  skin: 768x1280
+  config:
+    hw.lcd.density: 320
+
+- name: Nexus.One.Gingerbread.2.3.3
+  target: android-10
+  abi: armeabi
+  skin: 480x800
+  config:
+    hw.lcd.density: 240
+
+- name: Nexus.10.Jellybean.4.3
+  target: android-18
+  abi: armeabi-v7a
+  skin: 2560x1600
+  config:
+    hw.lcd.density: 320
+
+- name: Droid.X.Gingerbread.2.3.3
+  target: android-10
+  abi: armeabi
+  skin: 480x854
+  config:
+    hw.lcd.density: 228
+
+- name: Droid.RAZR.ICS.4.0.3
+  target: android-15
+  abi: armeabi-v7a
+  skin: 540x960
+  config:
+    hw.lcd.density: 256
+
+- name: Droid.RAZR.Gingerbread.2.3.3
+  target: android-10
+  abi: armeabi
+  skin: 540x960
+  config:
+    hw.lcd.density: 256
+
+- name: Kindle.Fire.HD.8.9.ICS.4.0.3
+  target: android-15
+  abi: armeabi-v7a
+  skin: 1920x1200
+  config:
+    hw.lcd.density: 254
+
+- name: Kindle.Fire.HD.7.ICS.4.0.3
+  target: android-15
+  abi: armeabi-v7a
+  skin: 1280x800
+  config:
+    hw.lcd.density: 216
+
+- name: Kindle.Fire.Gingerbread.2.3.3
+  target: android-10
+  abi: armeabi
+  skin: 1024x600
+  config:
+    hw.lcd.density: 169
+
+- name: Galaxy.S2.Jellybean.4.3
+  target: android-18
+  abi: armeabi-v7a
+  skin: 480x800
+  config:
+    hw.lcd.density: 219
+
+- name: Galaxy.S2.ICS.4.0.3
+  target: android-15
+  abi: armeabi-v7a
+  skin: 480x800
+  config:
+    hw.lcd.density: 219
+
+- name: Galaxy.S2.Gingerbread.2.3.3
+  target: android-10
+  abi: armeabi
+  skin: 480x800
+  config:
+    hw.lcd.density: 219
+
+- name: Galaxy.S3.Jellybean.4.3
+  target: android-18
+  abi: armeabi-v7a
+  skin: 720x1280
+  config:
+    hw.lcd.density: 306
+
+- name: Galaxy.S3.ICS.4.0.3
+  target: android-15
+  abi: armeabi-v7a
+  skin: 720x1280
+  config:
+    hw.lcd.density: 306
+
+- name: Galaxy.S4.Jellybean.4.3
+  target: android-18
+  abi: armeabi-v7a
+  skin: 1080x1920
+  config:
+    hw.lcd.density: 441
+
+- name: Galaxy.Note.II.Jellybean.4.3
+  target: android-18
+  abi: armeabi-v7a
+  skin: 1280x720
+  config:
+    hw.lcd.density: 267
+
+- name: Galaxy.Note.Jellybean.4.3
+  target: android-18
+  abi: armeabi-v7a
+  skin: 1280x800
+  config:
+    hw.lcd.density: 285
+
+- name: Galaxy.Note.ICS.4.0.3
+  target: android-15
+  abi: armeabi-v7a
+  skin: 1280x800
+  config:
+    hw.lcd.density: 285
+
+- name: Galaxy.Note.Gingerbread.2.3.3
+  target: android-10
+  abi: armeabi
+  skin: 1280x800
+  config:
+    hw.lcd.density: 285
