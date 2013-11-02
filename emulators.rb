@@ -30,7 +30,7 @@ class EmulatorBuilder
     'hw.keyboard=yes',
     'hw.mainKeys=yes',
     'hw.ramSize=1024',
-    'hw.sdCard=no',
+    # 'hw.sdCard=no',
     'hw.sensors.orientation=yes',
     'hw.sensors.proximity=yes',
     'hw.trackBall=no',
@@ -94,6 +94,10 @@ class EmulatorBuilder
   # Check the specified path for the location of the Android SDK.
   # Returns a matching substring or nil.
   def check_sdk_path(path)
+    if path.nil?
+      return;
+    end
+    
     users_dir = '/Users'
     sdk_dir = 'android-sdks'
     android_path = '/tools/android'
@@ -195,7 +199,7 @@ class EmulatorBuilder
       puts "Configuring : #{emulator['name']}\n"
       args = " --abi #{emulator['abi']} --skin #{emulator['skin']} --target #{emulator['target']} --name #{emulator['name']}"
       # Echo no, to decline setting up a custom hardware profile. 
-      `echo no | android create avd --force --snapshot #{args}`
+      `echo no | android create avd --force --sdcard 10M #{args}`
       update_emulator_config(emulator)
     end
   end

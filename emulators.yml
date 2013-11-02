@@ -5,6 +5,7 @@
   skin: 1920x1200
   config: 
     hw.lcd.density: 323
+    hw.gpu.enabled: yes
 
 - name: Nexus.7.Gen.1.Jellybean.4.3
   target: android-18
@@ -12,6 +13,7 @@
   skin: 1280x800
   config: 
     hw.lcd.density: 216
+    hw.gpu.enabled: yes
 
 - name: Nexus.7.Gen.1.ICS.4.0.3
   target: android-15
@@ -19,6 +21,7 @@
   skin: 1280x800
   config: 
     hw.lcd.density: 216
+    hw.gpu.enabled: yes
 
 - name: Nexus.4.Jellybean.4.3
   target: android-18
@@ -26,6 +29,7 @@
   skin: 768x1280
   config:
     hw.lcd.density: 320
+    hw.gpu.enabled: yes
 
 - name: Nexus.4.ICS.4.0.3
   target: android-15
@@ -33,6 +37,7 @@
   skin: 768x1280
   config:
     hw.lcd.density: 320
+    hw.gpu.enabled: yes
 
 - name: Nexus.One.Gingerbread.2.3.3
   target: android-10
@@ -47,6 +52,7 @@
   skin: 2560x1600
   config:
     hw.lcd.density: 320
+    hw.gpu.enabled: yes
 
 - name: Droid.X.Gingerbread.2.3.3
   target: android-10
@@ -61,6 +67,7 @@
   skin: 540x960
   config:
     hw.lcd.density: 256
+    hw.gpu.enabled: yes
 
 - name: Droid.RAZR.Gingerbread.2.3.3
   target: android-10
@@ -75,6 +82,7 @@
   skin: 1920x1200
   config:
     hw.lcd.density: 254
+    hw.gpu.enabled: yes
 
 - name: Kindle.Fire.HD.7.ICS.4.0.3
   target: android-15
@@ -82,6 +90,7 @@
   skin: 1280x800
   config:
     hw.lcd.density: 216
+    hw.gpu.enabled: yes
 
 - name: Kindle.Fire.Gingerbread.2.3.3
   target: android-10
@@ -96,6 +105,7 @@
   skin: 480x800
   config:
     hw.lcd.density: 219
+    hw.gpu.enabled: yes
 
 - name: Galaxy.S2.ICS.4.0.3
   target: android-15
@@ -103,6 +113,7 @@
   skin: 480x800
   config:
     hw.lcd.density: 219
+    hw.gpu.enabled: yes
 
 - name: Galaxy.S2.Gingerbread.2.3.3
   target: android-10
@@ -117,6 +128,7 @@
   skin: 720x1280
   config:
     hw.lcd.density: 306
+    hw.gpu.enabled: yes
 
 - name: Galaxy.S3.ICS.4.0.3
   target: android-15
@@ -124,6 +136,7 @@
   skin: 720x1280
   config:
     hw.lcd.density: 306
+    hw.gpu.enabled: yes
 
 - name: Galaxy.S4.Jellybean.4.3
   target: android-18
@@ -131,6 +144,7 @@
   skin: 1080x1920
   config:
     hw.lcd.density: 441
+    hw.gpu.enabled: yes
 
 - name: Galaxy.Note.II.Jellybean.4.3
   target: android-18
@@ -138,6 +152,7 @@
   skin: 1280x720
   config:
     hw.lcd.density: 267
+    hw.gpu.enabled: yes
 
 - name: Galaxy.Note.Jellybean.4.3
   target: android-18
@@ -145,6 +160,7 @@
   skin: 1280x800
   config:
     hw.lcd.density: 285
+    hw.gpu.enabled: yes
 
 - name: Galaxy.Note.ICS.4.0.3
   target: android-15
@@ -152,6 +168,7 @@
   skin: 1280x800
   config:
     hw.lcd.density: 285
+    hw.gpu.enabled: yes
 
 - name: Galaxy.Note.Gingerbread.2.3.3
   target: android-10

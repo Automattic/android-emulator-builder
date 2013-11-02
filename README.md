@@ -35,3 +35,11 @@ Note that running this script will overwrite any previously created emulators wi
 
 If you run this script while there is a running emulator, you will be prompted to install the latest copy of WordPress for Android.  If you answer (y) the application .apk will be downloaded to your working directory and installed in the running emulator. Once its installed it will be launched automatically.
 
+
+##Wish List
+Somethings that might be nice to have in future versions. 
+
+- Build a single, specific emulator and install its apps.
+- Install Simplenote for Mac
+- Support for x86 architecture (once its fixed for Mavericks)
+- Automagically install the Android SDK if its missing and a package manager like Brew is available. 
