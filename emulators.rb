@@ -40,7 +40,7 @@ class EmulatorBuilder
   
   def init
     check_sdk
-    
+
     # If an emulator is running prompt to install the latest apk.
     if @adb_path
       str = `#{@adb_path} devices`
@@ -132,29 +132,30 @@ class EmulatorBuilder
   # Look for the SDKs Android tool
   def check_sdk
     puts "Looking for the Android SDK"
-    
+
     # Look for the Android SDK. If we can't find it, ask for one. 
-    sdk_path = check_sdk_path(`which android`)
+    check_sdk_path(`which android`)
 
-    if sdk_path.nil?
-      sdk_path = check_sdk_path(ENV['ANDROID_HOME'])
+    if @sdk_path.nil?
+      locations = `locate "android-sdks/tools/android"`
+      if locations.length > 0
+        check_sdk_path(locations.split("\n").pop)
+      end
     end
 
-    if sdk_path.nil?
-      sdk_path = check_sdk_path(ENV['PATH'])
+    if @sdk_path.nil?
+      check_sdk_path(ENV['ANDROID_HOME'])
+    end
+
+    if @sdk_path.nil?
+      check_sdk_path(ENV['PATH'])
     end
     
-    if sdk_path.nil?
+    if @sdk_path.nil?
       #hail mary
-      sdk_path = check_sdk_path(ENV['HOME'] + '/android-sdks')
+      check_sdk_path(ENV['HOME'] + '/android-sdks')
     end
     
-    if sdk_path.nil?
-      #wah wah waaah...
-      return
-    end
-
-    sdk_path
   end
   
   
