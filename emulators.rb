@@ -92,40 +92,21 @@ class EmulatorBuilder
 
 
   # Check the specified path for the location of the Android SDK.
-  # Returns a matching substring or nil.
-  def check_sdk_path(path)
-    if path.nil?
-      return;
-    end
-    
-    users_dir = '/Users'
-    sdk_dir = 'android-sdks'
+  def check_android_path(path)
     android_path = '/tools/android'
     adb_path = '/platform-tools/adb'
-    
-    idx = path.rindex(sdk_dir)
-    if idx.nil?
-      return
-    end
-    path = path[0, idx + sdk_dir.length]
 
-    idx = path.rindex(users_dir)
-    path = path[idx, path.length]
-    
-    if !File.directory?(path)
-      return
+    if File.exists?(path)
+      @sdk_path = path
     end
-    
-    tool_path = path + android_path
-    if File.exists?(tool_path)
-      @sdk_path = tool_path
+  
+    path = path[0, path.index(android_path)]
+    path = path + adb_path
+  
+    if File.exists?(path)
+      @adb_path = path
     end
-    
-    tool_path = path + adb_path
-    if File.exists?(tool_path)
-      @adb_path = tool_path
-    end
-    
+  
   end
 
   
@@ -134,27 +115,29 @@ class EmulatorBuilder
     puts "Looking for the Android SDK"
 
     # Look for the Android SDK. If we can't find it, ask for one. 
-    check_sdk_path(`which android`)
+    check_android_path(`which android`)
 
     if @sdk_path.nil?
       locations = `locate "/tools/android"`
       if locations.length > 0
-        check_sdk_path(locations.split("\n").pop)
+        check_android_path(locations.split("\n").pop)
       end
     end
 
     if @sdk_path.nil?
-      check_sdk_path(ENV['ANDROID_HOME'])
+      locations = `find ~ -type f -maxdepth 6 -name android`
+      if locations.length > 0
+        check_android_path(locations.split("\n").pop)
+      end
     end
 
     if @sdk_path.nil?
-      check_sdk_path(ENV['PATH'])
+      locations = `find / -type f -maxdepth 6 -name android`
+      if locations.length > 0
+        check_android_path(locations.split("\n").pop)
+      end
     end
-    
-    if @sdk_path.nil?
-      #hail mary
-      check_sdk_path(ENV['HOME'] + '/android-sdks')
-    end
+
     
   end
   
@@ -252,7 +235,6 @@ class EmulatorBuilder
     system("#{@adb_path} shell am start -n org.wordpress.android/org.wordpress.android.ui.posts.PostsActivity")
     puts "Finished"
   end
-
 
 end
 
