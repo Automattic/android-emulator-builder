@@ -137,7 +137,7 @@ class EmulatorBuilder
     check_sdk_path(`which android`)
 
     if @sdk_path.nil?
-      locations = `locate "android-sdks/tools/android"`
+      locations = `locate "/tools/android"`
       if locations.length > 0
         check_sdk_path(locations.split("\n").pop)
       end
