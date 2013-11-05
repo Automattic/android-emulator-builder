@@ -30,7 +30,6 @@ class EmulatorBuilder
     'hw.keyboard=yes',
     'hw.mainKeys=yes',
     'hw.ramSize=1024',
-    # 'hw.sdCard=no',
     'hw.sensors.orientation=yes',
     'hw.sensors.proximity=yes',
     'hw.trackBall=no',
@@ -93,6 +92,10 @@ class EmulatorBuilder
 
   # Check the specified path for the location of the Android SDK.
   def check_android_path(path)
+    if path.nil? || path.length == 0
+      return
+    end
+    
     android_path = '/tools/android'
     adb_path = '/platform-tools/adb'
 
@@ -115,9 +118,11 @@ class EmulatorBuilder
     puts "Looking for the Android SDK"
 
     # Look for the Android SDK. If we can't find it, ask for one. 
+    puts "  Trying which"
     check_android_path(`which android`)
 
     if @sdk_path.nil?
+      puts "  Trying locate"
       locations = `locate "/tools/android"`
       if locations.length > 0
         check_android_path(locations.split("\n").pop)
@@ -125,6 +130,7 @@ class EmulatorBuilder
     end
 
     if @sdk_path.nil?
+      puts "  Trying find"
       locations = `find ~ -type f -maxdepth 6 -name android`
       if locations.length > 0
         check_android_path(locations.split("\n").pop)
@@ -138,6 +144,9 @@ class EmulatorBuilder
       end
     end
 
+    if @sdk_path
+      puts "  Found #{@sdk_path}"
+    end
     
   end
   
@@ -183,7 +192,7 @@ class EmulatorBuilder
       puts "Configuring : #{emulator['name']}\n"
       args = " --abi #{emulator['abi']} --skin #{emulator['skin']} --target #{emulator['target']} --name #{emulator['name']}"
       # Echo no, to decline setting up a custom hardware profile. 
-      `echo no | android create avd --force --sdcard 10M #{args}`
+      `echo no | #{@sdk_path} create avd --force --sdcard 10M #{args}`
       update_emulator_config(emulator)
     end
   end
